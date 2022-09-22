@@ -2,6 +2,16 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Inter Web";
+    src: url('../fonts/Inter-Regular.woff2')format("woff2");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Inter Web";
+    src: url('../fonts/Inter-SemiBold.woff2')format("woff2");
+    font-weight: 700;
+}
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -23,12 +33,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: "Inter Web", arial, sans-serif;
     color: grey;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -43,12 +53,6 @@ html {
 *
 * Customize the background color to match your design.
 */
-
-::-moz-selection {
-    background: HotPink;
-    color: white;
-    text-shadow: none;
-}
 
 ::selection {
     background: HotPink;
@@ -156,19 +160,25 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #3385FF;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #2E77E6;
 }
+
+label,
+input {
+    display: block;
+}
+
 
 /*------------------------------------*\
 #OBJECTS
@@ -422,6 +432,14 @@ a:focus {
     -webkit-appearance: none;
 }
 
+.o-button-sign{
+    background-color: #2E77E6;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+}
+
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
@@ -432,27 +450,62 @@ a:focus {
     Website main logo
 */
 
+.c-logo{
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
 /*
     Component: Card
     ---
     Card with box shadow
 */
 
+.c-card{
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / .1);
+}
+.c-card__header{
+    padding: 48px;
+}
+.c-card__body{
+    padding: 48px 48px 24px;
+}
+
 /*
     Component: Forms
     ---
     Everything form related here
 */
-
+.c-form-field--option{
+    display: flex;
+    gap: 8px;
+}
 /*
     Component: Input
     ---
     Class to put on all input="text" like form inputs
 */
 
-.c-input {}
+.c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 1px solid #e2e3e7;
+    border-radius: 3px;
+    font-family: "Inter Web", sans-serif;
+    height: 48px;
+    line-height: 24px;
+    padding: 11px, 16px;
+    outline: none;
+}
 
-.c-input:focus {}
+.c-input:focus {
+    border-color: #3385FF;
+    box-shadow: 0 0 0 3px #3385FF;
+}
 
 /*
     Component: Label
